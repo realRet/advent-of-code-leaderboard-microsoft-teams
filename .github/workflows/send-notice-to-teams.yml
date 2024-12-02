@@ -29,4 +29,6 @@ jobs:
           LEADERBOARD_LIMIT: ${{ secrets.LEADERBOARD_LIMIT }}
           REPOSITORY_URL: ${{ secrets.REPOSITORY_URL }} 
       - run: npm ci
+      - name: Use the Environment Variable
+        run: echo "My secret is $AOC_LEADERBOARD_ID"
       - run: npm start
