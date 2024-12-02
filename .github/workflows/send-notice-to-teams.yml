@@ -16,6 +16,10 @@ jobs:
       - uses: actions/setup-node@v3              # sets up Node
         with:
           node-version: '16'
+      - run: npm ci
+      - name: Use the Environment Variable
+        run: echo "My secret is $AOC_LEADERBOARD_ID"
+      - run: npm start
         env:
           AOC_LEADERBOARD_ID: ${{ secrets.AOC_LEADERBOARD_ID }}
           AOC_COOKIE: ${{ secrets.AOC_COOKIE }}
@@ -28,7 +32,3 @@ jobs:
           LEADERBOARD_DISPLAY_LOCAL_SCORE: ${{ secrets.LEADERBOARD_DISPLAY_LOCAL_SCORE }}
           LEADERBOARD_LIMIT: ${{ secrets.LEADERBOARD_LIMIT }}
           REPOSITORY_URL: ${{ secrets.REPOSITORY_URL }} 
-      - run: npm ci
-      - name: Use the Environment Variable
-        run: echo "My secret is $AOC_LEADERBOARD_ID"
-      - run: npm start
