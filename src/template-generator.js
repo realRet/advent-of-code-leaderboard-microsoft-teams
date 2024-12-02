@@ -6,15 +6,13 @@ function generateTeamsMessageCardLeaderboard(leaderboard, options) {
     const leaderboardName = options.leaderboardName ? options.leaderboardName : '';
 
     return teamsTemplate = {
-        "@type": "MessageCard",
-        "@context": "http://schema.org/extensions",
-        "themeColor": "0f0f23",
-        "summary": `Advent of Code ${leaderboard.eventYear} - ${leaderboardName} leaderboard`,
-        "sections": [
-            {
+        // "@type": "MessageCard",
+        // "@context": "http://schema.org/extensions",
+        // "themeColor": "0f0f23",
+        // "summary": `Advent of Code ${leaderboard.eventYear} - ${leaderboardName} leaderboard`,
+        // "sections": [
+        //     {
                 "text": generateHtmlLeaderboard(leaderboard, options).trim()
-            }
-        ]
     }
 }
 
